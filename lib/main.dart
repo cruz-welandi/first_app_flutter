@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'firstPage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -74,12 +75,25 @@ class _MyHomePageState extends State<MyHomePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(
+                      height: 60,
                       width: screenWidth*0.3,
                       decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: Colors.orange,),
+                      child: TextButton(
+                        onPressed: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => newPage()),
+                          );
+                        },
+                        child: Text('New page',
+                                  style: TextStyle(fontSize: 20, color: Colors.white),),
+                        ),
                     ),
                     Container(
                       width: screenWidth*0.3,
+                      height: 60,
                       decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: Colors.green,),
+                      child: TextField(autofillHints: Characters('first nname')),
                     ),
                     Container(
                       width: screenWidth*0.3,
@@ -201,8 +215,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 width: screenWidth*1,
                 decoration: BoxDecoration(color: Colors.black),
                 child : Center(
-                  child: Text('© 2021 Hancruz | Developed by Ecole241business',
-                   style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16),) ,)
+                  child: Text('© 2023 Hancruz | Developed by Ecole241business',
+                   style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16),),
+                  )
               )
           ] ),
       )
